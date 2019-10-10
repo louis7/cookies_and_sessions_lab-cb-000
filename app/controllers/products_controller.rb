@@ -4,6 +4,7 @@ class ProductsController < ActionController::Base
   end
 
   def add
+    cart = []
     cart << params[:product]
     render :index
   end
