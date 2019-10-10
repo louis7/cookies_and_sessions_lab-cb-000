@@ -1,10 +1,9 @@
 class ProductController < ActionController::Base
 
-  def index
-  end
+  protect_from_forgery with: :exception
+helper_method :cart
 
-  def add
-    cart << params[:product]
-    render :index
-  end
+def cart
+  session[:cart] ||= []
+end
 end
